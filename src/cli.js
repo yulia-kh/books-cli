@@ -1,7 +1,7 @@
 import minimist from 'minimist';
 // import { search } from './search';
 // import { list } from './list';
-// import { help } from './help';
+import { help } from './help';
 import { version } from './version';
 
 export async function cli(argsArray) {
@@ -12,9 +12,9 @@ export async function cli(argsArray) {
     cmd = 'version';
   }
 
-  // if (args.help || args.h) {
-  //   cmd = 'help';
-  // }
+  if (args.help || args.h) {
+    cmd = 'help';
+  }
 
   switch (cmd) {
     case 'version':
