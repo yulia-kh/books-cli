@@ -7,7 +7,7 @@
     "books": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +17,10 @@
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "babel-jest": "^25.3.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^25.3.0"
   }
 }

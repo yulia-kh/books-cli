@@ -1,6 +1,5 @@
-import { API_KEY } from './config';
 import minimist from 'minimist';
-// import { search } from './search';
+import { search } from './search';
 // import { list } from './list';
 import { help } from './help';
 import { version } from './version';
