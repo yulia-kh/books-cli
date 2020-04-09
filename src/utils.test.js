@@ -35,8 +35,8 @@ describe('returns correct string', () => {
     expect(stringifyBookItem(withAuthors)).toEqual("Title by author1, author2. Publisher: publisher");
   })
 
-  it('returns empty string if book object is not provided', () => {
-    expect(stringifyBookItem({})).toEqual("Something went wrong");
+  it('returns error message if book object is not provided', () => {
+    expect(stringifyBookItem({})).toEqual("Something went wrong. Try again later");
   })
   
 })

@@ -11,5 +11,5 @@ export default async function selectBook() {
     max: 5
   });
  
-  console.log(response.choice);
+  return response.choice;
 }

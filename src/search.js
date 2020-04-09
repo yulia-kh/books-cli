@@ -2,6 +2,7 @@ import { API_KEY } from './config';
 import { queryBooks } from './rest-service';
 import stringifyBookItem from './utils';
 import selectBook from './prompt';
+import { addBook } from './file-service';
 
 export async function search(args) {
   const apiKey = API_KEY;
@@ -16,5 +17,7 @@ export async function search(args) {
     console.log(`${index + 1} ${stringifyBookItem(item)}`);
   })
 
-  selectBook();
+  const selectedBook = await selectBook();
+
+  await addBook(stringifyBookItem(booksArr[selectedBook - 1]));
 }
