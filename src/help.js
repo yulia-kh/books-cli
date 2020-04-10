@@ -1,9 +1,9 @@
 const menus = {
     main: `
-      search......................search books
-      list........................show my reading list
-      version <your query>........show package version
-      help........................show help menu for a command
+      search <your query>.................search books
+      list................................show my reading list
+      version.............................show package version
+      help................................show help menu for a command
     `
 }
 

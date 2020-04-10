@@ -1,6 +1,7 @@
-import stringifyBookItem from './utils';
+import { stringifyBookItem } from './utils';
+import { containsQuery } from './utils';
 
-describe('returns correct string', () => {
+describe('stringifyBookItem returns correct string', () => {
   it('returns valid string if valid input', () => {
     const testBookObj = {
       "volumeInfo": {
@@ -37,6 +38,16 @@ describe('returns correct string', () => {
 
   it('returns error message if book object is not provided', () => {
     expect(stringifyBookItem({})).toEqual("Something went wrong. Try again later");
+  }) 
+})
+
+describe('containsQuery checks search args correctly', () => {
+  it('returns true if args list contains search command and query', () => {
+    const argsObj = { _: ['search', 'test']};
+    expect(containsQuery(argsObj)).toBeTruthy();
   })
-  
+  it('returns false if args list doesn`t contain a query', () => {
+    const argsObj = { _: ['search']};
+    expect(containsQuery(argsObj)).toBeFalsy();
+  })
 })

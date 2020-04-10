@@ -3,6 +3,7 @@ import { search } from './search';
 import { list } from './list';
 import { help } from './help';
 import { version } from './version';
+import { containsQuery } from './utils';
 
 
 export async function cli(argsArray) {
@@ -27,7 +28,11 @@ export async function cli(argsArray) {
       break;
 
     case 'search':
-      search(args);
+      if (containsQuery(args)) {
+        search(args);
+      } else {
+        help(args);
+      }
       break;
 
     case 'list':
